@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NASA Exoplanet Archive Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    h1 {
+      color: #004080;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #e0f0ff;
+      margin: 0.5em 0;
+      padding: 0.5em;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NASA Exoplanet Archive</h1>
+  <p>List of some discovered exoplanets:</p>
+  <ul id="planet-list">Loading...</ul>
+
+  <script>
+    async function fetchExoplanets() {
+      const url = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,disc_year+from+ps&format=json';
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        const data = await response.json();
+        const list = document.getElementById('planet-list');
+        list.innerHTML = '';
+        data.forEach(planet => {
+          const li = document.createElement('li');
+          li.textContent = `${planet.pl_name} (Discovered: ${planet.disc_year})`;
+          list.appendChild(li);
+        });
+      } catch (error) {
+        document.getElementById('planet-list').textContent = 'Failed to load data.';
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchExoplanets();
+  </script>
+</body>
+</html>

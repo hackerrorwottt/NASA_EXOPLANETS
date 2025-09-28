@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NASA Exoplanets — Scrape Results</title>
+  <style>
+    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 24px; max-width: 1000px; }
+    header { margin-bottom: 16px; }
+    .meta { color: #555; margin-bottom: 12px; }
+    .grid { display: grid; grid-template-columns: 1fr 320px; gap: 20px; }
+    .card { background: #fff; border-radius: 8px; padding: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .images img { max-width: 100%; height: auto; display:block; margin-bottom:8px; border-radius:6px; }
+    .links a { word-break: break-all; display:block; margin-bottom:6px; }
+    .heading { font-weight: 700; margin-top:10px; }
+    details p { margin:0 0 10px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="pageTitle">Scrape results</h1>
+    <div class="meta" id="metaDesc"></div>
+  </header>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Headings</h2>
+        <div id="headings"></div>
+
+        <h2 class="heading">Content (paragraphs)</h2>
+        <div id="paragraphs"></div>
+
+        <h2 class="heading">Links</h2>
+        <div id="links" class="links"></div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card">
+        <h3>Images</h3>
+        <div class="images" id="images"></div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+  // Put scraped JSON here as a JS object, e.g.:
+  // var DATA = { ... }
+  
+  // Rendering code is the same as the one the Python script writes.
+  </script>
+</body>
+</html>
