@@ -4,4 +4,4 @@
 - [x] Run the scraper: python nasa_exoplanets_scraper.py
 - [x] Verify output: Open results.html in browser to view scraped data
 -hi
-_hell
+_hel
