@@ -3,3 +3,4 @@
 - [x] Install dependencies: pip install requests beautifulsoup4
 - [x] Run the scraper: python nasa_exoplanets_scraper.py
 - [x] Verify output: Open results.html in browser to view scraped data
+-hi
